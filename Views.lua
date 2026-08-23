@@ -50,6 +50,40 @@ SnapViews = {
 		[10] = head_pos_default({}),--Num 9
 		[11] = head_pos_default({}),--look at left  mirror
 		[12] = head_pos_default({}),--look at right mirror
-		[13] = head_pos_default({})--default view
+[13] = head_pos_default({})--default view
+	}
+}
+
+local function vr_pos_default(tab)
+    if not tab then
+	   tab = {}
+	end
+
+	tab.viewAngle = tab.viewAngle  or 110
+	tab.hAngle    = tab.hAngle     or  0
+	tab.vAngle    = tab.vAngle     or  0
+	tab.x_trans   = tab.x_trans    or  0
+	tab.y_trans   = tab.y_trans    or 0
+	tab.z_trans   = tab.z_trans    or  0
+	tab.rollAngle = tab.rollAngle  or  0
+	return tab
+end
+
+SnapViews = {
+[1] = {-- player slot 1 (pilot)
+		[1]  = head_pos_default({}),--Num 0
+		[2]  = head_pos_default({}),--LWin + Num1 : Snap View 1 - 
+		[3]  = head_pos_default({}),--LWin + Num2 : Snap View 2 - 
+		[4]  = head_pos_default({}),--LWin + Num3 : Snap View 3 - 
+		[5]  = head_pos_default({}),--LWin + Num4 : Snap View 4 - 
+		[6]  = head_pos_default({}),--LWin + Num5 : Snap View 5 - Default view
+		[7]  = head_pos_default({}),--LWin + Num6 : Snap View 6 - 
+		[8]  = head_pos_default({}),--LWin + Num7 : Snap View 7 - 
+		[9]  = head_pos_default({}),--LWin + Num8 : Snap View 8 -
+		[10] = head_pos_default({}),--Num 9
+		[11] = head_pos_default({}),--look at left  mirror
+		[12] = head_pos_default({}),--look at right mirror
+		[13] = head_pos_default({}),--default view (flat screen)
+		[14] = vr_pos_default({}),--default view (VR)
 	}
 }
