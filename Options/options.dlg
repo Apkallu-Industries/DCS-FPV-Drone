@@ -3,13 +3,33 @@ local EntryLabelWidth = 180
 local EntrySliderWidth = 300
 local LeftColumnX = 15
 local LeftColumnIndent = 190
+local CheckboxLabelIndent = 30
+local EntryHelpWidth = 800
 local rowOffset = 20
 local EntrySliderOffset = 2
 local Option1 = rowOffset * 3
 local Option2 = rowOffset * 5
 local Option3 = rowOffset * 7
 local Option4 = rowOffset * 9
+local Option5 = rowOffset * 11
 
+local HelpSkin = {
+	["params"] = {
+		["name"] = "staticSkin2",
+	},
+	["states"] = {
+		["released"] = {
+			[1] = {
+				["text"] = {
+					["fontSize"] = 11,
+					["horzAlign"] = {
+						["type"] = "min"
+					}
+				}
+			}
+		}
+	}
+}
 
 dialog = {
 	["children"] = {
@@ -297,6 +317,68 @@ dialog = {
 					},
 					["type"] = "Static",
 				},
+								
+				---------------- Scan line effect ------------------------------
+				["scanLineEffectLabel"] = {
+					["params"] = {
+						["bounds"] = {
+							["h"] = EntryHeight,
+							["w"] = EntryLabelWidth,
+							["x"] = LeftColumnX + CheckboxLabelIndent,
+							["y"] = Option5 - 4,
+						},
+						["enabled"] = true,
+						["text"] = "Enable scan line effect",
+						["tooltip"] = "",
+						["visible"] = true,
+						["zindex"] = 0,
+					},
+					["skin"] = {
+						["params"] = {
+							["name"] = "staticOptionsCaptionSkin",
+						},
+					},
+					["type"] = "Static",
+				},
+				["scanLineEffectCheckbox"] = {
+					["params"] = {
+						["bounds"] = {
+							["h"] = EntryHeight,
+							["w"] = EntrySliderWidth,
+							["x"] = LeftColumnX,
+							["y"] = Option5,
+						},
+						["enabled"] = true,
+						["state"] = true,
+						["tabOrder"] = 0,
+						["text"] = "",
+						["tooltip"] = "",
+						["visible"] = true,
+						["zindex"] = 0,
+					},
+					["skin"] = {["params"] = {["name"] = "checkBoxSkin_options",},},
+					["type"] = "CheckBox",
+				},
+				["scanLineEffectHelp"] = {
+					["params"] = {
+						["bounds"] = {
+							["h"] = EntryHeight,
+							["w"] = EntryHelpWidth,
+							["x"] = LeftColumnX + CheckboxLabelIndent,
+							["y"] = Option5 + 15,
+						},
+						["enabled"] = true,
+						["text"] = "When enabled, an overlay is present with faint horizontal lines on the screen to mimic analog video",
+						["tooltip"] = "",
+						["visible"] = true,
+						["zindex"] = 0,
+					},
+					["skin"] = HelpSkin,
+					["type"] = "Static",
+				},
+				
+				
+				
 				
 				------------ plane title ------------------------ 
 				["nameLabel"] = {

@@ -1,4 +1,5 @@
 dofile(LockOn_Options.common_script_path.."elements_defs.lua")
+dofile(LockOn_Options.script_path.."materials.lua")
 
 SetCustomScale(1.0)
 
@@ -12,7 +13,7 @@ aspect = LockOn_Options.screen.aspect
 
 local white_Color ={230,230,230,255}
 local ttf_font = {class = "ceUITTF", ttf = LockOn_Options.common_script_path.."../../../../WebGUI/fonts/OpenSans-Regular.ttf", size = 100}
-local TTF  = MakeFont(ttf_font, white_Color)
+--local TTF  = MakeFont({used_DXUnicodeFontData = "font_OSD"},{255,255,255,255})--MakeFont(ttf_font, white_Color)
 
 
 function AddElement(object)
@@ -24,7 +25,7 @@ end
 function addText(name, value, pos, controllers, elementParams, formats)
 	local txt = CreateElement "ceStringPoly"
 	txt.name               = name
-	txt.material           = TTF--MakeFont({used_DXUnicodeFontData = "font_arial_17"},{230,230,230,255})
+	txt.material           = OSD_font--TTF--MakeFont({used_DXUnicodeFontData = "font_arial_17"},{230,230,230,255})
 	txt.additive_alpha	  = false
 	txt.collimated		  = false
 	txt.use_mipfilter      = true
@@ -47,7 +48,7 @@ function addText(name, value, pos, controllers, elementParams, formats)
 	txt.level 		    = DEFAULT_LEVEL
 	
 	txt.alignment = align or "CenterCenter"
-	txt.stringdefs = {0.005, 0.005, 0, 0}
+	txt.stringdefs = {0.006, 0.006, 0, 0}
 		
 	if value ~= nil then
 		txt.value = value
@@ -59,17 +60,19 @@ function addText(name, value, pos, controllers, elementParams, formats)
 	return txt
 end
 
-function addTexPoly(name, material, elementParams, controllers)
+function addTexPoly(name, material, elementParams, controllers, _Xsize, _Ysize, pos)
+local Xsize = _Xsize or 1
+local Ysize = _Ysize or 1
 local tex          = CreateElement "ceTexPoly"
 tex.name           = name
 tex.material       = material
-tex.vertices   	   = {{-aspect, 1}, -- affects sizing (4 corners of tga file)
-					  { aspect, 1},
-					  { aspect,-1},
-					  {-aspect,-1}}
+tex.vertices   	   = {{-aspect*Xsize, Ysize}, -- affects sizing (4 corners of tga file)
+					  { aspect*Xsize, Ysize},
+					  { aspect*Xsize,-Ysize},
+					  {-aspect*Xsize,-Ysize}}
 tex.indices		   = {0,1,2,2,3,0}
 tex.tex_coords	   = {{0,0},{1,0},{1,1},{0,1}}
---tex.init_pos       = pos
+tex.init_pos       = pos
 tex.alignment      = "CenterCenter"
 tex.element_params = elementParams
 tex.controllers    = controllers 

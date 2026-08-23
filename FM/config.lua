@@ -1,21 +1,21 @@
 
 _amortizer_min_length					= 0.0
-_amortizer_max_length					= 0.02-- if these values are too small, it becomes jittery
-_amortizer_basic_length					= 0.02
-_amortizer_reduce_length				= 0.02
-_allowable_hard_contact_length			= 0.02
-_amortizer_spring_force_factor			= 1
+_amortizer_max_length					= 0.015-- if these values are too small, it becomes jittery
+_amortizer_basic_length					= 0.015
+_amortizer_reduce_length				= 0.015
+_allowable_hard_contact_length			= 0.015
+_amortizer_spring_force_factor			= 5
 _amortizer_spring_force_factor_rate		= 1
-_amortizer_static_force					= 15
-_amortizer_direct_damper_force_factor	= 15
+_amortizer_static_force					= 40
+_amortizer_direct_damper_force_factor	= 30
 _amortizer_back_damper_force_factor		= 1000
 
 
-_wheel_radius					= 0.40
-_wheel_static_friction_factor	= 1.11-- must be a different value than roll and glide, otherwise collision doesnt work
-_wheel_side_friction_factor		= 1.1
-_wheel_roll_friction_factor		= 1.09
-_wheel_glide_friction_factor	= 1.09
+_wheel_radius					= 0.15
+_wheel_static_friction_factor	= 1.1-- must be a different value than roll and glide, otherwise collision doesnt work
+_wheel_side_friction_factor		= 0.25
+_wheel_roll_friction_factor		= 1.0
+_wheel_glide_friction_factor	= 0.9
 _wheel_damage_force_factor		= 9999.0
 _wheel_damage_speedX			= 900
 _wheel_damage_delta_speedX		= 900

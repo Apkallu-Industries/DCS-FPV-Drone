@@ -28,6 +28,9 @@ local Option_Angle  = get_param_handle("Option_Angle")
 local option_gravityMult = get_plugin_option_value("FPV_Drone","gravity","local")
 local Option_Gravity  = get_param_handle("Option_Gravity")
 
+local option_scanlines = get_plugin_option_value("FPV_Drone","scanLineEffect","local")
+local Option_Scanline  = get_param_handle("Option_Scanline")
+
 function post_initialize()
 	--SHOW_CONTROLS:set(1)
     local birth = LockOn_Options.init_conditions.birth_place
@@ -40,6 +43,11 @@ function post_initialize()
 	Option_PitchRollRate:set(option_maxPitchRollRate)
 	Option_Angle:set(option_maxAngle)
 	Option_Gravity:set(option_gravityMult)
+	if option_scanlines then	
+		Option_Scanline:set(1)
+	else
+		Option_Scanline:set(0)
+	end
 	
 	set_aircraft_draw_argument_value(38, 1)-- so "cockpit" noise matches external
 	

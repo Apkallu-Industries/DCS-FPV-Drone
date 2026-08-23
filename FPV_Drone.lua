@@ -16,8 +16,8 @@ FPVDrone = {
 			username    = 'FPV_Drone';
 			desrt		= 'Fighter-2-crush';-- name of destroyed shape table, see below
 			index       =  WSTYPE_PLACEHOLDER;
-			life  	    = 1; --   The health of the object (ie. lifebar)
-			vis   	    = 0.2; -- Visibility factor (For a small objects is better to put lower nr).
+			life  	    = 2; --   The health of the object (ie. lifebar)
+			vis   	    = 0.8; -- Visibility factor (For a small objects is better to put lower nr).
 			fire  	    = { 300, 2}; -- Fire on the ground after destoyed: 300sec 4m
 		},
 		--{name="Drone_destr"; file="Drone_destr"; fire={ 240, 2};},
@@ -38,13 +38,23 @@ FPVDrone = {
 	M_nominal			= 1.00, -- [kg]
 	M_max				= 1.5, -- Max gross weight [kg]
 	M_fuel_max			= 0.001, -- max fuel weight [kg]
-	RCS					= 0.1, -- Radar Cross Section m^2
+	RCS					= 0.4, -- Radar Cross Section m^2
 	IR_emission_coeff	= 0.01, -- 1 is IR emission of Su-27	
 	--MOI 				= {12000, 35000, 40000},
-	nose_gear_pos 		= { 0.308,	-0.22,	0}, -- used for starting placement on ground {forward/back,up/down,left/right}
-	main_gear_pos 		= { -0.308,	-0.22,	0.308},
-	lead_stock_main		= -0.01,--something to do with the gear
-	lead_stock_support	= -0.01,--something to do with the gear	
+	nose_gear_pos 		= { 0.26,	-0.22,	0}, -- used for starting placement on ground {forward/back,up/down,left/right}
+	main_gear_pos 		= { -0.26,	-0.22,	0.26},
+	
+	--nose_gear_amortizer_direct_stroke        = 0.0,
+    --nose_gear_amortizer_reversal_stroke      = -0.001,
+    --nose_gear_amortizer_normal_weight_stroke = -0.001,
+    --nose_gear_wheel_diameter                 = 0.01,
+	--main_gear_amortizer_direct_stroke        = 0.0,
+    --main_gear_amortizer_reversal_stroke      = -0.001,
+    --main_gear_amortizer_normal_weight_stroke = -0.001,
+    --main_gear_wheel_diameter                 = 0.01,
+	
+	lead_stock_main		= -0.001,--something to do with the gear
+	lead_stock_support	= -0.001,--something to do with the gear	
 	--sound_name 		= "Rotor", -- rotor sound from Sounds/sdef
 	engines_count		= 4, -- number of engines
 	engines_nozzles 	= 
@@ -72,36 +82,36 @@ FPVDrone = {
 	Ny_max				=	6.0, --max G for AI
 	scheme				=	0,-- 0 for normal helis, 1 for ka-50 (might be rotor configuration)
 	----- AI flight model probably (doesnt affect human FM)
-	rotor_height		=	0.5*ftToM,-- height of rotor from ground [meters]
-	rotor_diameter		=	1.0*ftToM,-- [meters]
-	blade_chord			=	0.1,-- [meters]
+	rotor_height		=	1.5*ftToM,-- height of rotor from ground [meters]
+	rotor_diameter		=	1.5*ftToM,-- [meters]
+	blade_chord			=	0.2,-- [meters]
 	blades_number		=	3,
-	blade_area			=	0.112, -- [m^2]
-	fuselage_Cxa0		=	0.1,-- drag coefficient
-	fuselage_Cxa90		=	0.1,-- side drag coefficient?
-	fuselage_area		=	0.1, -- [m^2]
-	centering			=	0,--???
-	tail_pos 			= 	{-0.564, 0.0, 0},
+	blade_area			=	0.112*4, -- [m^2]
+	fuselage_Cxa0		=	0.01,-- drag coefficient
+	fuselage_Cxa90		=	0.01,-- side drag coefficient?
+	fuselage_area		=	0.01, -- [m^2]
+	centering			=	0,
+	tail_pos 			= 	{-0.1, 0.0, 0},
 	tail_fin_area		=	0.1,-- vertical fin area [m^2]
 	tail_stab_area		=	0.1,-- horizontal tail area [m^2]
-	thrust_correction	=	0.55,
-	rotor_MOI			=	10,
+	thrust_correction	=	1.0,
+	rotor_MOI			=	5,
 	rotor_pos 			= 	{0,	0, 0},
 
 	engine_data = 
 	{  -- these are only for AI (except the sound_name)
-		power_take_off = 1,-- [kW]
-		power_max	   = 1,-- [kW]
-		power_WEP	   = 1,-- [kW]
+		power_take_off = 10,-- [kW]
+		power_max	   = 10,-- [kW]
+		power_WEP	   = 10,-- [kW]
 		power_TH_k     = { -- power change from altitude
-			[1] = {0,	-230.8,	2245.6},
-			[2] = {0,	-230.8,	2245.6},
-			[3] = {0,	-325.4,	2628.9},
-			[4] = {0,	-235.6,	1931.9},
+			[1] = {0,	-1.0,	0.0},
+			[2] = {0,	-1.0,	0.0},
+			[3] = {0,	-1.0,	0.0},
+			[4] = {0,	-1.0,	0.0},
 		},
-		SFC_k = {2.045e-007, -0.0006328, 0.803},-- Specific fuel consumption (probably polynomial coefs.)
-		power_RPM_k = 	{-0.08639,	0.24277,	0.84175},-- power vs RPM (probably polynomial coefs.)
-		power_RPM_min	=	9.1384,
+		SFC_k = {0, -0.000001, 0},-- Specific fuel consumption (probably polynomial coefs.)
+		power_RPM_k = 	{-0.0001,	1,	0},-- power vs RPM (probably polynomial coefs.)
+		power_RPM_min	=	1.0,
 		sound_name	= "QuadcopterMotor", -- engine sound from Sounds/sdef
 	},
 	

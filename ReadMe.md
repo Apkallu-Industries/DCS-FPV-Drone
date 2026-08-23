@@ -11,7 +11,24 @@ The drone must be armed using [A] before it can fly.
 Rates and angle limits can be tuned in special settings.\
 The bomb can be detonated using [space bar]. The bomb is not detonated on collision, only by command.\
 Unlimited fuel option can be used for unlimited battery life if desired.\
-Recomend playing with G effects off.
+Recommend playing with G effects off.
 
 Known bugs:\
--Ground collision is buggy
+-AI does not work
+
+Changelog:
+v0.9.1
+- Ground collision adjusted
+- Visibilty to AI units increased
+- Improved OSD
+	- Added crosshairs
+	- Added analog video scan line effect (with option to remove it)
+	- Changed font to Betaflight glyphs
+- VR camera fixed (thanks Herobrudi112)
+
+v0.9.0
+- Initial release
+
+
+Credits:
+Some OSD glyphs used are from Betaflight, which falls under the GPLv3 license
