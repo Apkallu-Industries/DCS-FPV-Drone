@@ -1,6 +1,6 @@
 # FPV Quadcopter Drone Mod for DCS World
 
-v0.9.0 beta release
+v0.9.1 beta release
 
 Modes:
 - Acro (aka Rate) [1]: The inputs control the angular rates for pitch, roll, and yaw.
