@@ -16,9 +16,9 @@ _wheel_static_friction_factor	= 1.1-- must be a different value than roll and gl
 _wheel_side_friction_factor		= 0.25
 _wheel_roll_friction_factor		= 1.0
 _wheel_glide_friction_factor	= 0.9
-_wheel_damage_force_factor		= 9999.0
-_wheel_damage_speedX			= 900
-_wheel_damage_delta_speedX		= 900
+_wheel_damage_force_factor		= 1.0
+_wheel_damage_speedX			= 4.0
+_wheel_damage_delta_speedX		= 2.5
 _wheel_brake_moment_max			= 500
 _noise_k						= 0
 

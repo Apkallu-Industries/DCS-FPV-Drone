@@ -8,6 +8,8 @@ addText("Anglelabel", "ANGL", modePos, {{"parameter_in_range",0,1}}, {"FlightMod
 --addText("Horizlabel", "HORIZON", modePos, {{"parameter_in_range",0,2}}, {"FlightMode"})
 
 addText("ARMlabel", "DISARMED", {0,-0.25}, {{"parameter_in_range",0,0}}, {"isArmed"})
+addText("WHSafeLabel", "WH SAFE", {0,-0.40}, {{"parameter_in_range",0,0}}, {"WarheadStatus"})
+addText("WHLiveLabel", "WH LIVE", {0.9*aspect,0.80}, {{"parameter_in_range",0,1}}, {"WarheadStatus"})
 
 addText("battVoltlabel", nil, {-0.9*aspect,0.95}, {{"text_using_parameter",0,0}}, {"BatteryVoltage"},{"%.1fv"})
 addText("cellVoltlabel", nil, {-0.9*aspect,0.9}, {{"text_using_parameter",0,0}}, {"CellVoltage"},{"%.1fv"})

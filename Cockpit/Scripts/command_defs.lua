@@ -15,6 +15,19 @@ Keys =
 	DetonateWeapon	 = counter(),
 	
 	showControlInd = counter(),
+
+	-- Keyboard Flight Controls
+	ThrottleUp       = counter(),
+	ThrottleDown     = counter(),
+	PitchDown        = counter(), -- Nose down / Forward
+	PitchUp          = counter(), -- Nose up / Backward
+	RollLeft         = counter(),
+	RollRight        = counter(),
+	YawLeft          = counter(),
+	YawRight         = counter(),
+	ThrottleHover    = counter(),
+	ThrottleCut      = counter(),
+	WarheadArmToggle = counter(),
 }
 
 count = 3200

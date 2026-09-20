@@ -139,7 +139,7 @@ FPVDrone = {
 
 	fires_pos =
 	{ 
-		--[1] = 	{-1.8,	-0.55,	0}, -- turbine exit
+		[1] = 	{0.0,	0.0,	0.0},
 	},		
 
 	stores_number =	1,
@@ -150,7 +150,8 @@ FPVDrone = {
 				arg_value		= 1,
 			},         
 			{
-                {CLSID = "{DroneBomb}", arg_value = 0.0,Cx_gain = 0.5},
+                {CLSID = "{FPV_PG7V_Morkva}", arg_value = 0.0, Cx_gain = 0.5},
+                {CLSID = "{DroneBomb}", arg_value = 0.0, Cx_gain = 0.5},
             }
         ),       
     },
@@ -161,43 +162,21 @@ FPVDrone = {
         aircraft_task(Reconnaissance),
     },	
 	DefaultTask = aircraft_task(Reconnaissance),
-	--[[
-	LandRWCategories = 	-- adds these takeoff and landing options avaliable in mission editor
-    {	[1] = 
-        {
-           Name = "HelicopterCarrier",
-        },
-        [2] = 
-        {
-           Name = "AircraftCarrier",
-        },
-    },
-	TakeOffRWCategories = 
-    {	[1] = 
-        {
-            Name = "HelicopterCarrier",
-        },
-        [2] = 
-        {
-           Name = "AircraftCarrier",
-        },
-    },--]]
 	
 	Damage = verbose_to_dmg_properties( --index meaning see in Scripts\Aircrafts\_Common\Damage.lua
 	{		-- deps_cells defines what other parts get destroyed along with it			
-		["MAIN"]  		= {critical_damage = 2, args = {151}, deps_cells = {"COCKPIT","WING_L_01","WING_L_02","WING_L_03","WING_L_04"}}, 
-		["WING_L_01"]  	= {critical_damage = 1, args = {152}},-- Aft R Arm
-		["WING_L_02"]  	= {critical_damage = 1, args = {153}},-- Front R Arm
-		["WING_L_03"]  	= {critical_damage = 1, args = {154}},-- Aft L Arm
-		["WING_L_04"]  	= {critical_damage = 1, args = {155}},-- Front L Arm
+		["MAIN"]  		= {critical_damage = 0.5, args = {151}, deps_cells = {"COCKPIT","WING_L_01","WING_L_02","WING_L_03","WING_L_04"}}, 
+		["WING_L_01"]  	= {critical_damage = 0.5, args = {152}},-- Aft R Arm
+		["WING_L_02"]  	= {critical_damage = 0.5, args = {153}},-- Front R Arm
+		["WING_L_03"]  	= {critical_damage = 0.5, args = {154}},-- Aft L Arm
+		["WING_L_04"]  	= {critical_damage = 0.5, args = {155}},-- Front L Arm
 		
-		["Line_WING_L"]		= {critical_damage = 7, args = {156}}, -- aft Left line
-		["Line_WING_R"]		= {critical_damage = 7, args = {157}}, -- aft Right line
-		["Line_STABIL_L"]	= {critical_damage = 7, args = {158}}, -- front line L	
-		["Line_STABIL_R"]	= {critical_damage = 7, args = {159}}, -- front line R
+		["Line_WING_L"]		= {critical_damage = 0.5, args = {156}}, -- aft Left line
+		["Line_WING_R"]		= {critical_damage = 0.5, args = {157}}, -- aft Right line
+		["Line_STABIL_L"]	= {critical_damage = 0.5, args = {158}}, -- front line L	
+		["Line_STABIL_R"]	= {critical_damage = 0.5, args = {159}}, -- front line R
 					
-		--["CREW_1"]			= {critical_damage = 1, args = {205}}, -- pilot
-		["COCKPIT"]			= {critical_damage = 4, args = {149}},-- damage of COCKPIT will cause pilot death 
+		["COCKPIT"]			= {critical_damage = 0.5, args = {149}},-- damage of COCKPIT will cause pilot death 
 	}),
 	
 	Failures = { -- not working yet
