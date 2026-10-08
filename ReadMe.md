@@ -6,13 +6,24 @@
 
 <p align="center">
   <a href="https://www.digitalcombatsimulator.com/"><img src="https://img.shields.io/badge/DCS_World-2.9+-blue.svg" alt="DCS World" /></a>
-  <a href="https://github.com/CrudeCoder1/DCS-FPV-Drone"><img src="https://img.shields.io/badge/Version-v0.9.2_Beta-green.svg" alt="Version" /></a>
+  <a href="https://github.com/Apkallu-Industries/DCS-FPV-Drone"><img src="https://img.shields.io/badge/Version-v0.9.2_Beta-green.svg" alt="Version" /></a>
+  <a href="https://github.com/CrudeCoder1/DCS-FPV-Drone"><img src="https://img.shields.io/badge/Forked_From-CrudeCoder1%2FDCS--FPV--Drone-informational.svg" alt="Forked From" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-orange.svg" alt="License" /></a>
 </p>
 
 <p align="center">
   <img src="FPV-Wallpaper.png" width="100%" alt="FPV Strike Drone Wallpaper" />
 </p>
+
+> [!NOTE]
+> **Apkallu Industries Fork:** This repository is an enhanced community fork maintained by **Apkallu Industries**, based on the original [DCS-FPV-Drone](https://github.com/CrudeCoder1/DCS-FPV-Drone) by **CrudeCoder1**.
+>
+> **Fork Enhancements (v0.9.2+):**
+> * Dedicated **PG-7V "Morkva" HEAT** anti-tank shaped charge warhead with custom 3D model & textures.
+> * **Autonomous multi-vector impact fuse** (kinetic deceleration spikes, G-shock, ground strikes).
+> * Keyboard throttle accumulator with auto-hover lock preset (`[H]`) and instant throttle cut (`[C]`).
+> * Realistic analog video cutout static noise on detonation and airframe loss.
+> * Out-of-the-box controller presets and native gamepad input mappings.
 
 An ultra-realistic, fully flyable **FPV Kamikaze Strike Quadcopter Drone** mod for DCS World. Modeled after combat FPV quadcopters, featuring custom External Flight Model (EFM) multirotor aerodynamics, analog video feed with authentic Betaflight OSD, anti-armor warhead payloads, and multi-vector impact detonation against tanks and fortified targets.
 
@@ -176,6 +187,7 @@ The onboard head-up display provides real-time Betaflight-style telemetry:
 
 ## 👥 Credits & License
 
-* Developed by **CrudeCoder1** & contributors.
-* OSD Glyphs from Betaflight (under GPLv3).
+* **Apkallu Industries** — Maintenance, v0.9.2+ enhanced systems, PG-7V "Morkva" warhead 3D modeling & texturing, autonomous multi-vector impact fuse, throttle accumulator, and gamepad presets.
+* **CrudeCoder1** & contributors — Original [DCS-FPV-Drone](https://github.com/CrudeCoder1/DCS-FPV-Drone) base mod, flight mechanics, and core EFM framework.
+* **Betaflight** — OSD Glyphs (under GPLv3).
 * Licensed under the [GNU General Public License v3.0](LICENSE).
